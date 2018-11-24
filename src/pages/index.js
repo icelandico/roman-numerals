@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
 import Header from '../components/Header/header'
+import NavigationContainer from '../components/Navigation/Navigation';
 
 const StyledBanner = styled.div`
   display: flex;
@@ -17,17 +17,11 @@ const StyledBanner = styled.div`
   text-decoration: none;
   `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: #fff;
-`;
-
 const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
 
 `
-
 
 const IndexPage = () => (
   <>
@@ -35,8 +29,7 @@ const IndexPage = () => (
       <HeaderWrapper>
         <Header>Roman Numerals Converter</Header>
       </HeaderWrapper>
-      <StyledLink to="/converter/">Go to converter</StyledLink>
-      <StyledLink to="/about/">Go to about page</StyledLink>
+    <NavigationContainer />
     </StyledBanner>
   </>
 
