@@ -26,12 +26,19 @@ const InputPanel = styled.div`
 class Input extends Component {
 
   state = {
-    input: ''
+    input: '',
+    result: ''
   }
   
   handleChange = (event) => {
     this.setState({
       input: event.target.value
+    })
+  }
+
+  handleConvert = () => {
+    this.setState({
+      result: this.state.input
     })
   }
 
@@ -43,9 +50,13 @@ class Input extends Component {
           value={this.state.input}
           type="text"
         />
-        <ButtonConvert>Convert</ButtonConvert>
+        <ButtonConvert
+          onClick={this.handleConvert}
+        >
+        Convert
+        </ButtonConvert>
         <ResultDisplay 
-          result={this.state.input}
+          result={this.state.result}
         />
       </InputPanel>
     )
