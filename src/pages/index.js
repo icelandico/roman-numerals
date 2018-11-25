@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header/header'
-import NavigationContainer from '../components/Navigation/Navigation';
+import Navigation from '../components/Navigation/Navigation'
 
 const StyledBanner = styled.div`
   display: flex;
@@ -18,9 +18,7 @@ const StyledBanner = styled.div`
   `;
 
 const HeaderWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
+  text-align: center;
 `
 
 const IndexPage = () => (
@@ -29,7 +27,7 @@ const IndexPage = () => (
       <HeaderWrapper>
         <Header>Roman Numerals Converter</Header>
       </HeaderWrapper>
-    <NavigationContainer />
+      <Navigation />
     </StyledBanner>
   </>
 
