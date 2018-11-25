@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Header from '../components/Header/header'
 import Navigation from '../components/Navigation/Navigation'
 
-const StyledBanner = styled.div`
+const StyledBody = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,6 @@ const StyledBanner = styled.div`
   height: 100vh;
   background-color: #201858;
   color: #847EB1;
-  text-decoration: none;
   `;
 
 const HeaderWrapper = styled.div`
@@ -23,12 +22,12 @@ const HeaderWrapper = styled.div`
 
 const IndexPage = () => (
   <>
-    <StyledBanner>
+    <StyledBody>
       <HeaderWrapper>
         <Header>Roman Numerals Converter</Header>
       </HeaderWrapper>
       <Navigation />
-    </StyledBanner>
+    </StyledBody>
   </>
 
 )
