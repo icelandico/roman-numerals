@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import ResultDisplay from './../ResultDisplay/ResultDisplay'
 
 const ButtonConvert = styled.button`
   display: block;
@@ -14,12 +15,12 @@ const ButtonConvert = styled.button`
     color: #847EB1;
     border: 2px solid #847EB1;
   }
-
 `
 
 const InputPanel = styled.div`
   text-align: center;
   padding: 15px;
+  min-height: 30%;
 `
 
 class Input extends Component {
@@ -43,6 +44,9 @@ class Input extends Component {
           type="text"
         />
         <ButtonConvert>Convert</ButtonConvert>
+        <ResultDisplay 
+          result={this.state.input}
+        />
       </InputPanel>
     )
   }

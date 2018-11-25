@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header/header'
-import Input from '../components/Input/Input'
 import { Link } from 'gatsby'
-import ResultDisplay from '../components/ResultDispay/ResultDisplay';
+import MainPanel from '../components/MainPanel/MainPanel'
 
 const StyledBody = styled.div`
 display: flex;
@@ -32,18 +31,13 @@ color: #5F5293;
 `
 
 class Converter extends Component {
-
-
-
   render() {
     return (
       <StyledBody>
       <HeaderWrapper>
         <Header>Type a number here</Header>
       </HeaderWrapper>
-      <Input />
-      <ResultDisplay 
-      />
+      <MainPanel />
       <ButtonContainer>
         <StyledLink to={'/'}>Go back</StyledLink>
       </ButtonContainer>
