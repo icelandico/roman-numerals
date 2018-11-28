@@ -54,11 +54,19 @@ class Input extends Component {
     return romanNumsArray.join('')
   }
 
+  handleOnBlur = () => {
+    alert('Type number up to 4999!')
+    this.setState({
+      input: 4999
+    })
+  }
+
   render() {
     return(
       <InputPanel>
         <input
           onChange={this.handleChange}
+          onBlur={this.state.input > 4999 ? this.handleOnBlur : null}
           value={this.state.input}
           type="text"
         />
