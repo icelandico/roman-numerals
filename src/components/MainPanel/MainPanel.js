@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import ResultDisplay from './../ResultDisplay/ResultDisplay'
+import Toast from './../Toast/Toast'
 
 const ButtonConvert = styled.button`
+  background: #807E73;
   display: block;
   border: 2px solid transparent;
   border-radius: 15px;
@@ -78,6 +80,7 @@ class Input extends Component {
         <ResultDisplay 
           result={this.state.result}
         />
+        <Toast />
       </InputPanel>
     )
   }
