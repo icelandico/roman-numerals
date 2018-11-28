@@ -28,7 +28,9 @@ const InputPanel = styled.div`
 class Input extends Component {
   state = {
     input: '',
-    result: ''
+    result: '',
+    alertNumber: null,
+    alertEmptyInput: null
   }
   
   handleChange = (event) => {
@@ -80,7 +82,10 @@ class Input extends Component {
         <ResultDisplay 
           result={this.state.result}
         />
-        <Toast />
+        <Toast
+          alertNumber={this.state.alertNumber}
+          alertEmptyInput={this.state.alertEmptyInput}
+        />
       </InputPanel>
     )
   }

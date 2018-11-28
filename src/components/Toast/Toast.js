@@ -4,16 +4,17 @@ import styled from 'styled-components'
 const Toastr = styled.div`
   height: 50px;
   width: 250px;
-  background: #72686A;
+  background: ${props => props.alertNumber ? 'violet' : '#807E73'};
   color: #000;
   border-radius: 0.5rem;
   border-left: 1rem solid #BA1F36;
   line-height: 50px;
-  color: #fff;
+  color: #000;
   position: fixed;
   top: 15%;
   right: 50%;
-  transform: translateX(50%)
+  transform: translateX(50%);
+  transition: 2s;
 `
 
 const Toast = () => (
