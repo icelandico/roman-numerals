@@ -15,13 +15,13 @@ const ButtonConvert = styled.button`
     color: #847EB1;
     border: 2px solid #847EB1;
   }
-`
+`;
 
 const InputPanel = styled.div`
   text-align: center;
   padding: 15px;
   min-height: 30%;
-`
+`;
 
 class Input extends Component {
   state = {

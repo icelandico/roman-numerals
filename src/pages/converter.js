@@ -19,16 +19,16 @@ color: #847EB1;
 
 const HeaderWrapper = styled.div`
 text-align: center;
-`
+`;
 
 const ButtonContainer = styled.div`
 margin-top: 2rem;
-`
+`;
 
 const StyledLink = styled(Link)`
 text-decoration: none;
 color: #5F5293;
-`
+`;
 
 class Converter extends Component {
   render() {

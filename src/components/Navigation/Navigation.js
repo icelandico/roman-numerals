@@ -4,13 +4,13 @@ import { Link } from 'gatsby'
 
 const NavigationContainer = styled.div`
   min-width: 50%;
-`
+`;
 
 const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-`
+`;
 
 const NavItem = styled.li`
   padding: 0.5rem;
@@ -19,12 +19,12 @@ const NavItem = styled.li`
   text-align: center;
   display: inline-block;
   width: 100%;
-`
+`;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: #5F5293;
-`
+`;
 
 const Navigation = () => (
   <NavigationContainer>
