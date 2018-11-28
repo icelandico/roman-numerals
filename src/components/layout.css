@@ -25,22 +25,8 @@ section,
 summary {
   display: block;
 }
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
 progress {
   vertical-align: baseline;
-}
-[hidden],
-template {
-  display: none;
 }
 a {
   background-color: transparent;
@@ -49,19 +35,6 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
-}
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted;
-}
-b,
-strong {
-  font-weight: inherit;
-  font-weight: bolder;
-}
-dfn {
-  font-style: italic;
 }
 h1 {
   font-size: 2em;
@@ -77,9 +50,6 @@ select,
 textarea {
   font: inherit;
   margin: 0;
-}
-optgroup {
-  font-weight: 700;
 }
 button,
 input {
@@ -312,9 +282,6 @@ form {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-strong {
-  font-weight: bold;
-}
 li {
   margin-bottom: calc(1.45rem / 2);
 }
@@ -350,15 +317,6 @@ code {
   font-size: 0.85rem;
   line-height: 1.45rem;
 }
-kbd {
-  font-size: 0.85rem;
-  line-height: 1.45rem;
-}
-abbr[title] {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-  text-decoration: none;
-}
 tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
@@ -373,19 +331,7 @@ pre code {
   background: none;
   line-height: 1.42;
 }
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: " ";
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: "";
-}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
