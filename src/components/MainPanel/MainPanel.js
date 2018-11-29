@@ -40,8 +40,7 @@ class Input extends Component {
 
   handleConvert = () => {
     const inputNumber = parseInt(this.state.input)
-    const validation = this.validateInput(inputNumber)
-    return !validation ? this.handleDisplayResult(inputNumber) : alert('ERROR')
+    this.validateInput(inputNumber)
   }
 
   handleDisplayResult = (input) => {
@@ -66,13 +65,13 @@ class Input extends Component {
     const emptyInputText = 'Type at least one digit';
     const higherNumberText = 'Max number is 4999';
     if (!input) {
-      return emptyInputText
+      return alert(emptyInputText)
     }
     else if (input > 4999) {
-      return higherNumberText
+      return alert(higherNumberText)
     }
     else {
-      return ''
+      return this.handleDisplayResult(input)
     }
   }
 
