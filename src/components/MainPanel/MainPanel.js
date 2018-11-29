@@ -40,8 +40,13 @@ class Input extends Component {
 
   handleConvert = () => {
     const inputNumber = parseInt(this.state.input)
+    const validation = this.validateInput(inputNumber)
+    return !validation ? this.handleDisplayResult(inputNumber) : alert('ERROR')
+  }
+
+  handleDisplayResult = (input) => {
     this.setState({
-      result: this.convertNumber(inputNumber)
+      result: this.convertNumber(input)
     })
   }
 
@@ -57,10 +62,24 @@ class Input extends Component {
     return romanNumsArray.join('')
   }
 
-  handleOnBlur = () => {
+  validateInput = (input) => {
+    const emptyInputText = 'Type at least one digit';
+    const higherNumberText = 'Max number is 4999';
+    if (!input) {
+      return emptyInputText
+    }
+    else if (input > 4999) {
+      return higherNumberText
+    }
+    else {
+      return ''
+    }
+  }
+
+  handleConvertProcess = (alertText) => {
     this.setState({
       input: 4999,
-      alert: true
+      alert: alertText
     })
     setTimeout(() => this.setState( { alert: '' } ), 5000)
   }
@@ -70,7 +89,6 @@ class Input extends Component {
       <InputPanel>
         <input
           onChange={this.handleChange}
-          onBlur={this.state.input > 4999 ? this.handleOnBlur : null}
           value={this.state.input}
           type="text"
         />
@@ -86,8 +104,7 @@ class Input extends Component {
           this.state.alert?
 
         <Toast
-          alertNumber={this.state.alertNumber}
-          alertEmptyInput={this.state.alertEmptyInput}
+          alertText={this.state.alert}
         />
         :
         null

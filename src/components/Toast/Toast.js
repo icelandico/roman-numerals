@@ -18,7 +18,7 @@ const Toastr = styled.div`
 
 const Toast = () => (
   <Toastr>
-    This will be Toast
+    {this.props.alertText}
   </Toastr>
 )
 
