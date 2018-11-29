@@ -29,8 +29,7 @@ class Input extends Component {
   state = {
     input: '',
     result: '',
-    alertNumber: null,
-    alertEmptyInput: null
+    alert: ''
   }
   
   handleChange = (event) => {
@@ -59,10 +58,11 @@ class Input extends Component {
   }
 
   handleOnBlur = () => {
-    alert('Type number up to 4999!')
     this.setState({
-      input: 4999
+      input: 4999,
+      alert: true
     })
+    setTimeout(() => this.setState( { alert: '' } ), 5000)
   }
 
   render() {
@@ -82,10 +82,17 @@ class Input extends Component {
         <ResultDisplay 
           result={this.state.result}
         />
+        {
+          this.state.alert?
+
         <Toast
           alertNumber={this.state.alertNumber}
           alertEmptyInput={this.state.alertEmptyInput}
         />
+        :
+        null
+        }
+
       </InputPanel>
     )
   }

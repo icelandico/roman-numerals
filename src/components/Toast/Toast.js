@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Toastr = styled.div`
   height: 50px;
   width: 250px;
-  background: ${props => props.alertNumber ? 'violet' : '#807E73'};
+  background: #8712aa;
   color: #000;
   border-radius: 0.5rem;
   border-left: 1rem solid #BA1F36;
@@ -14,7 +14,6 @@ const Toastr = styled.div`
   top: 15%;
   right: 50%;
   transform: translateX(50%);
-  transition: 2s;
 `
 
 const Toast = () => (
