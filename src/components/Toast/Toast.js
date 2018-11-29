@@ -16,9 +16,9 @@ const Toastr = styled.div`
   transform: translateX(50%);
 `
 
-const Toast = () => (
+const Toast = (props) => (
   <Toastr>
-    {this.props.alertText}
+    {props.alertText}
   </Toastr>
 )
 

@@ -65,20 +65,20 @@ class Input extends Component {
     const emptyInputText = 'Type at least one digit';
     const higherNumberText = 'Max number is 4999';
     if (!input) {
-      return alert(emptyInputText)
+      return this.handleError(emptyInputText)
     }
     else if (input > 4999) {
-      return alert(higherNumberText)
+      return this.handleError(higherNumberText)
     }
     else {
       return this.handleDisplayResult(input)
     }
   }
 
-  handleConvertProcess = (alertText) => {
+  handleError = (errorText) => {
     this.setState({
-      input: 4999,
-      alert: alertText
+      input: '',
+      alert: errorText
     })
     setTimeout(() => this.setState( { alert: '' } ), 5000)
   }
@@ -100,15 +100,18 @@ class Input extends Component {
           result={this.state.result}
         />
         {
-          this.state.alert?
+
+        this.state.alert ?
 
         <Toast
           alertText={this.state.alert}
         />
-        :
-        null
-        }
 
+        :
+
+        null 
+
+        }
       </InputPanel>
     )
   }
