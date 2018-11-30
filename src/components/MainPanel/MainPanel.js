@@ -76,11 +76,12 @@ class Input extends Component {
   }
 
   handleError = (errorText) => {
+    clearTimeout(toastTimer)
     this.setState({
       input: '',
       alert: errorText
     })
-    setTimeout(() => this.setState( { alert: '' } ), 5000)
+    const toastTimer = setTimeout(() => this.setState( { alert: '' } ), 5000)
   }
 
   render() {
@@ -118,3 +119,5 @@ class Input extends Component {
 }
 
 export default Input
+
+
