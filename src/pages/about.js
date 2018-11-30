@@ -1,14 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
 import Body from '../components/Body/Body'
+import Navigation from '../components/Navigation/Navigation'
 
 const About = () => (
   <>
     <Body>
-      About Page
+      <Navigation />
     </Body>
   </>
-
 )
 
 export default About

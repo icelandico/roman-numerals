@@ -21,14 +21,14 @@ color: #5F5293;
 const Converter = () => {
     return (
       <Body>
-      <HeaderWrapper>
-        <Header>Type a number here</Header>
-      </HeaderWrapper>
-      <MainPanel />
-      <ButtonContainer>
-        <StyledLink to={'/'}>Go back</StyledLink>
-      </ButtonContainer>
-    </Body>
+        <HeaderWrapper>
+          <Header>Type a number here</Header>
+        </HeaderWrapper>
+        <MainPanel />
+        <ButtonContainer>
+          <StyledLink to={'/'}>Go back</StyledLink>
+        </ButtonContainer>
+      </Body>
   )
 }
 

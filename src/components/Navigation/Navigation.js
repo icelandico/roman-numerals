@@ -31,9 +31,9 @@ const Navigation = () => (
     <List>
       <NavItem><StyledLink to={'/converter/'}>Go to Converter</StyledLink></NavItem>
       <NavItem><StyledLink to={'/about/'}>Go to About</StyledLink></NavItem>
+      <NavItem><StyledLink to={'/'}>Go to Main Page</StyledLink></NavItem>
     </List>
   </NavigationContainer>
-
 )
 
 export default Navigation
