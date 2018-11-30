@@ -81,11 +81,15 @@ class Input extends Component {
   validateInput = (input) => {
     const emptyInputText = 'Type at least one digit';
     const higherNumberText = 'Max number is 4999';
-    if (!input) {
-      return this.handleError(emptyInputText)
+    const zeroText = 'Romans didn\'t have zero!';
+    if (input === 0) {
+      return this.handleError(zeroText)
     }
     else if (input > 4999) {
       return this.handleError(higherNumberText)
+    }
+    else if (!input) {
+      return this.handleError(emptyInputText)
     }
     else {
       return this.handleDisplayResult(input)
