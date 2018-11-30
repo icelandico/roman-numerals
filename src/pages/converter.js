@@ -1,21 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Body from '../components/Body/Body'
 import Header from '../components/Header/header'
 import { Link } from 'gatsby'
 import MainPanel from '../components/MainPanel/MainPanel'
-
-const StyledBody = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-margin: 0;
-padding: 0;
-width: 100%;
-height: 100vh;
-background-color: #201858;
-color: #847EB1;
-`;
 
 const HeaderWrapper = styled.div`
 text-align: center;
@@ -30,10 +18,9 @@ text-decoration: none;
 color: #5F5293;
 `;
 
-class Converter extends Component {
-  render() {
+const Converter = () => {
     return (
-      <StyledBody>
+      <Body>
       <HeaderWrapper>
         <Header>Type a number here</Header>
       </HeaderWrapper>
@@ -41,9 +28,8 @@ class Converter extends Component {
       <ButtonContainer>
         <StyledLink to={'/'}>Go back</StyledLink>
       </ButtonContainer>
-    </StyledBody>
-    )
-  }
+    </Body>
+  )
 }
 
 export default Converter
