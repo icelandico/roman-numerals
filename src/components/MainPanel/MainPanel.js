@@ -25,8 +25,8 @@ const ButtonConvert = styled.button`
 
 const InputPanel = styled.div`
   text-align: center;
-  padding: 3rem;
-  min-height: 30%;
+  min-height: 25%;
+  margin-top: 2rem;
 `;
 
 const StyledInput = styled.input`

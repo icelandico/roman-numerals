@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
@@ -45,14 +45,42 @@ const StyledLink = styled(Link)`
   color: #97AABD;
 `;
 
-const Navigation = () => (
-  <NavigationContainer>
-    <List>
-      <NavItem><StyledLink to={'/converter/'}>Converter</StyledLink></NavItem>
-      <NavItem><StyledLink to={'/about/'}>About</StyledLink></NavItem>
-      <NavItem><StyledLink to={'/'}>Main Page</StyledLink></NavItem>
-    </List>
-  </NavigationContainer>
-)
+
+class Navigation extends Component {
+  
+  state = {
+    clicked: '/about/'
+  }
+
+  render() {
+    const routes =
+    [
+      {
+        to: '/converter/',
+        message: 'Converter',
+      },
+      {
+        to: '/about/',
+        message: 'About',
+      },
+      {
+        to: '/',
+        message: 'Main Page',
+      }
+    ];
+
+    return (
+      <NavigationContainer>
+        <List>
+          { 
+            routes.map((route, index) => {
+              return <NavItem key={index}><StyledLink to={route.to}>{route.message}</StyledLink></NavItem>
+            })
+          }
+        </List>
+      </NavigationContainer>
+    )
+  }
+}
 
 export default Navigation

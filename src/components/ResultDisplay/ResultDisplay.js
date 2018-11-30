@@ -5,6 +5,7 @@ const ResultTab = styled.div`
   font-size: 4vh;
   letter-spacing: 0.5rem;
   text-indent: 0.5rem;
+  font-weight: 900;
 `
 
 const ResultDisplay = (props) => (
