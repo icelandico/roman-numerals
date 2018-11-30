@@ -6,13 +6,13 @@ const keyframesDiv = keyframes`
     opacity: 0;
   }
   100% {
-    oapcity: 1;
+    opacity: 1;
   }
 `
 
 const Toastr = styled.div`
   height: 0px;
-  width: 250px;
+  width: 90%;
   background: #807E73;
   color: #000;
   border-radius: 0.5rem;
@@ -20,24 +20,25 @@ const Toastr = styled.div`
   line-height: 50px;
   color: #000;
   position: fixed;
-  top: 15%;
+  top: 5%;
   right: 50%;
   transform: translateX(50%);
-  transition: height 2s ease-in-out, opacity 2s ease-in-out;
   opacity: 0;
   visibility: hidden;
   animation-name: ${keyframesDiv};
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
   animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: forwards;
-  animation-play-state: running;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    width: 40%;
+  }
 `;
 
 const ToastrShown = styled(Toastr)`
-  transition: height 2s, opacity 2s;
   opacity: 1;
   visibility: visible;
   height: 50px;
