@@ -8,9 +8,20 @@ const ResultTab = styled.div`
   font-weight: 900;
 `
 
+const ResultText = styled.p`
+  box-shadow: 0 0 25px 5px #000;
+  padding: 1rem;
+`
+
 const ResultDisplay = (props) => (
   <ResultTab>
-    <p>{props.result ? props.result : '' }</p>
+    {
+      props.result ?
+      <ResultText>{props.result}</ResultText>
+      :
+      null
+    }
+
   </ResultTab>
 )
 
