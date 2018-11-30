@@ -29,9 +29,9 @@ const StyledLink = styled(Link)`
 const Navigation = () => (
   <NavigationContainer>
     <List>
-      <NavItem><StyledLink to={'/converter/'}>Go to Converter</StyledLink></NavItem>
-      <NavItem><StyledLink to={'/about/'}>Go to About</StyledLink></NavItem>
-      <NavItem><StyledLink to={'/'}>Go to Main Page</StyledLink></NavItem>
+      <NavItem><StyledLink to={'/converter/'}>Converter</StyledLink></NavItem>
+      <NavItem><StyledLink to={'/about/'}>About</StyledLink></NavItem>
+      <NavItem><StyledLink to={'/'}>Main Page</StyledLink></NavItem>
     </List>
   </NavigationContainer>
 )
