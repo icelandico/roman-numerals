@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
+
+
 const NavigationContainer = styled.div`
   min-width: 50%;
 `;
@@ -26,12 +28,39 @@ const StyledLink = styled(Link)`
   color: #5F5293;
 `;
 
-const Navigation = () => (
+// const Navigation = () => (
+//   <NavigationContainer>
+//     <List>
+//       <NavItem><StyledLink to={'/converter/'}>Converter</StyledLink></NavItem>
+//       <NavItem><StyledLink to={'/about/'}>About</StyledLink></NavItem>
+//       <NavItem><StyledLink to={'/'}>Main Page</StyledLink></NavItem>
+//     </List>
+//   </NavigationContainer>
+// )
+
+const routes = [{
+  to: '/converter/',
+  message: 'Go to Converter',
+},
+{
+  to: '/about/',
+  message: 'Go to About',
+},
+{
+  to: '/',
+  message: 'Go to Main Page',
+}];
+
+const Navigation = (currentLocation) => (
   <NavigationContainer>
     <List>
-      <NavItem><StyledLink to={'/converter/'}>Converter</StyledLink></NavItem>
-      <NavItem><StyledLink to={'/about/'}>About</StyledLink></NavItem>
-      <NavItem><StyledLink to={'/'}>Main Page</StyledLink></NavItem>
+      {
+        routes.filter(route => {
+        if (route.to !== currentLocation) {
+          return <NavItem><StyledLink to={route.to}>{route.message}</StyledLink></NavItem>
+        }
+        })
+      }
     </List>
   </NavigationContainer>
 )
