@@ -10,8 +10,8 @@ const StyledBody = styled.div`
   padding: 0;
   width: 100%;
   height: 100vh;
-  background-color: #201858;
-  color: #847EB1;
+  background-color: #314455;
+  color: #97AABD;
 `
 
 const Body = (props) => {

@@ -8,8 +8,14 @@ const NavigationContainer = styled.div`
 
 const List = styled.ul`
   list-style: none;
-  margin: 0;
   padding: 0;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    max-width: 20%;
+  }
 `;
 
 const NavItem = styled.li`
@@ -18,12 +24,25 @@ const NavItem = styled.li`
   font-weight: 700;
   text-align: center;
   display: inline-block;
-  width: 100%;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #97AABD;
+    transition: width .3s;
+    top: 5px;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #5F5293;
+  color: #97AABD;
 `;
 
 const Navigation = () => (
