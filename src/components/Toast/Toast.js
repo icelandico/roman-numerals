@@ -13,10 +13,9 @@ const keyframesDiv = keyframes`
 const Toastr = styled.div`
   height: 0px;
   width: 90%;
-  background: #807E73;
-  color: #000;
+  background: #644E5B;
   border-radius: 0.5rem;
-  border-left: 1rem solid #BA1F36;
+  border-left: 1rem solid #C96567;
   line-height: 50px;
   color: #000;
   position: fixed;
@@ -42,6 +41,9 @@ const ToastrShown = styled(Toastr)`
   opacity: 1;
   visibility: visible;
   height: 50px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
 `;
 
 const Toast = (props) => (

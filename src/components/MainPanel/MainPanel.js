@@ -4,26 +4,43 @@ import ResultDisplay from './../ResultDisplay/ResultDisplay'
 import Toast from './../Toast/Toast'
 
 const ButtonConvert = styled.button`
-  background: #807E73;
+  background: #97AABD;
   display: block;
   border: 2px solid transparent;
   border-radius: 15px;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   margin: 2rem auto;
   outline: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: 'Garamond';
+  font-weight: 700;
 
   :hover {
-    background: #201858;
-    color: #847EB1;
-    border: 2px solid #847EB1;
+    background: #314455;
+    color: #97AABD;
+    border: 2px solid #97AABD;
   }
 `;
 
 const InputPanel = styled.div`
   text-align: center;
-  padding: 15px;
+  padding: 3rem;
   min-height: 30%;
 `;
+
+const StyledInput = styled.input`
+  padding: 0.5rem;
+  border: none;
+  transition: box-shadow 0.3s;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0.4rem 0.4rem 0.75rem #000;
+  } 
+`
 
 class Input extends Component {
   state = {
@@ -87,7 +104,8 @@ class Input extends Component {
   render() {
     return(
       <InputPanel>
-        <input
+        <StyledInput
+          placeholder="Type a number"
           onChange={this.handleChange}
           value={this.state.input}
           type="text"

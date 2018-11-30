@@ -6,7 +6,10 @@ import Navigation from '../components/Navigation/Navigation'
 
 const HeaderWrapper = styled.div`
   text-align: center;
+  margin: 3rem;
+  padding: 0.5rem;
 `
+
 const IndexPage = () => (
   <Body>
     <HeaderWrapper>
@@ -18,3 +21,5 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+
