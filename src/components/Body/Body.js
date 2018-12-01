@@ -6,7 +6,7 @@ const StyledBody = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0;
+  margin: 0 !important;
   padding: 0;
   width: 100%;
   height: 100vh;

@@ -79,6 +79,7 @@ class Input extends Component {
   }
 
   validateInput = (input) => {
+    console.log(input)
     const emptyInputText = 'Type at least one digit';
     const higherNumberText = 'Max number is 4999';
     const zeroText = 'Romans didn\'t have zero!';

@@ -11,7 +11,6 @@ const keyframesDiv = keyframes`
 `
 
 const Toastr = styled.div`
-  height: 0px;
   width: 90%;
   background: #644E5B;
   border-radius: 0.5rem;
@@ -43,7 +42,11 @@ const ToastrShown = styled(Toastr)`
   height: 50px;
   color: #fff;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Toast = (props) => (
