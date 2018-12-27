@@ -23,6 +23,10 @@ const Button = styled.button`
   }
 `
 
+const ButtonContainer = styled.div`
+  display: flex;
+`
+
 const ButtonConvert = Button.withComponent('button');
 
 const ButtonClear = Button.withComponent('button');
@@ -122,14 +126,16 @@ class Input extends Component {
           value={this.state.input}
           type="text"
         />
-        <ButtonConvert
-          onClick={this.handleConvert}
-        >
-        Convert
+        <ButtonContainer>
+          <ButtonConvert
+            onClick={this.handleConvert}
+          >
+            Convert
         </ButtonConvert>
-        <ButtonClear>
-          Clear 
+          <ButtonClear>
+            Clear
         </ButtonClear>
+        </ButtonContainer>
         <ResultDisplay 
           result={this.state.result}
         />
