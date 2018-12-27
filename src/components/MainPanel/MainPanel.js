@@ -56,6 +56,12 @@ class Input extends Component {
     result: '',
     alert: ''
   }
+
+  clearInput = () => {
+    this.setState({
+      input: ''
+    })
+  }
   
   handleChange = (event) => {
     this.setState({
@@ -132,7 +138,9 @@ class Input extends Component {
           >
             Convert
         </ButtonConvert>
-          <ButtonClear>
+        <ButtonClear
+          onClick={this.clearInput}
+        >
             Clear
         </ButtonClear>
         </ButtonContainer>
