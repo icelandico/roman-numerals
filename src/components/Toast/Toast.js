@@ -42,10 +42,10 @@ const ToastrShown = styled(Toastr)`
   height: 50px;
   color: #fff;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 2vh;
 
   @media (min-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 3vh;
   }
 `;
 
@@ -56,7 +56,7 @@ const Toast = (props) => (
         {props.alertText}
       </ToastrShown>
     :
-    null
+      null
   
 )
 

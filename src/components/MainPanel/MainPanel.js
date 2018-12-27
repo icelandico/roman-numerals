@@ -79,7 +79,6 @@ class Input extends Component {
   }
 
   validateInput = (input) => {
-    console.log(input)
     const emptyInputText = 'Type at least one digit';
     const higherNumberText = 'Max number is 4999';
     const zeroText = 'Romans didn\'t have zero!';
@@ -98,12 +97,16 @@ class Input extends Component {
   }
 
   handleError = (errorText) => {
-    clearTimeout(toastTimer)
     this.setState({
       input: '',
       alert: errorText
     })
-    const toastTimer = setTimeout(() => this.setState( { alert: '' } ), 5000)
+    this.clearTimeout()
+    this.toastTimer = setTimeout(() => this.setState( { alert: '' } ), 5000)
+  }
+
+  clearTimeout = () => {
+    clearTimeout(this.toastTimer)
   }
 
   render() {
