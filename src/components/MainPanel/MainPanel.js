@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ResultDisplay from './../ResultDisplay/ResultDisplay'
 import Toast from './../Toast/Toast'
 
-const ButtonConvert = styled.button`
+const Button = styled.button`
   background: #97AABD;
   display: block;
   border: 2px solid transparent;
@@ -21,7 +21,11 @@ const ButtonConvert = styled.button`
     color: #97AABD;
     border: 2px solid #97AABD;
   }
-`;
+`
+
+const ButtonConvert = Button.withComponent('button');
+
+const ButtonClear = Button.withComponent('button');
 
 const InputPanel = styled.div`
   text-align: center;
@@ -123,6 +127,9 @@ class Input extends Component {
         >
         Convert
         </ButtonConvert>
+        <ButtonClear>
+          Clear 
+        </ButtonClear>
         <ResultDisplay 
           result={this.state.result}
         />
