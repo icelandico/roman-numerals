@@ -12,9 +12,9 @@ const keyframesDiv = keyframes`
 
 const Toastr = styled.div`
   width: 90%;
-  background: #644E5B;
+  background: #644e5b;
   border-radius: 0.5rem;
-  border-left: 1rem solid #C96567;
+  border-left: 1rem solid #c96567;
   line-height: 50px;
   color: #000;
   position: fixed;
@@ -34,7 +34,7 @@ const Toastr = styled.div`
   @media (min-width: 768px) {
     width: 40%;
   }
-`;
+`
 
 const ToastrShown = styled(Toastr)`
   opacity: 1;
@@ -47,17 +47,9 @@ const ToastrShown = styled(Toastr)`
   @media (min-width: 768px) {
     font-size: 3vh;
   }
-`;
+`
 
-const Toast = (props) => (
-  
-    props ?
-      <ToastrShown>
-        {props.alertText}
-      </ToastrShown>
-    :
-      null
-  
-)
+const Toast = props =>
+  props ? <ToastrShown>{props.alertText}</ToastrShown> : null
 
 export default Toast

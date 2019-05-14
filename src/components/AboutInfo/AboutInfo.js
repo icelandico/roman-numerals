@@ -18,9 +18,10 @@ const AboutInfo = () => {
   return (
     <AboutInfoStyled>
       <p>
-      Ancient Romans used a special method of showing numbers.
-      I provide You a tool to transform number to Roman Symbols.<br/>
-      The input is limited to 4999 so far.
+        Ancient Romans used a special method of showing numbers. I provide You a
+        tool to transform number to Roman Symbols.
+        <br />
+        The input is limited to 4999 so far.
       </p>
     </AboutInfoStyled>
   )

@@ -16,12 +16,12 @@ const Line = styled.hr`
 `
 
 const Converter = () => {
-    return (
-      <Body>
-        <Navigation />
-        <Line/>
-        <MainPanel />
-      </Body>
+  return (
+    <Body>
+      <Navigation />
+      <Line />
+      <MainPanel />
+    </Body>
   )
 }
 

@@ -32,6 +32,8 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-defaults": "^9.0.0",
     "gh-pages": "^2.0.1",
     "prettier": "^1.14.2"
   },

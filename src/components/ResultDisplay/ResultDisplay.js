@@ -13,15 +13,9 @@ const ResultText = styled.p`
   padding: 1rem;
 `
 
-const ResultDisplay = (props) => (
+const ResultDisplay = props => (
   <ResultTab>
-    {
-      props.result ?
-      <ResultText>{props.result}</ResultText>
-      :
-      null
-    }
-
+    {props.result ? <ResultText>{props.result}</ResultText> : null}
   </ResultTab>
 )
 

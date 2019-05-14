@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const NavigationContainer = styled.div`
   min-width: 50%;
-`;
+`
 
 const List = styled.ul`
   list-style: none;
@@ -16,7 +16,7 @@ const List = styled.ul`
   @media (min-width: 768px) {
     max-width: 20%;
   }
-`;
+`
 
 const NavItem = styled.li`
   padding: 0.5rem;
@@ -30,31 +30,28 @@ const NavItem = styled.li`
     display: block;
     width: 0;
     height: 3px;
-    background: #97AABD;
-    transition: width .3s;
+    background: #97aabd;
+    transition: width 0.3s;
     top: 5px;
   }
 
   &:hover::after {
     width: 100%;
   }
-`;
+`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #97AABD;
-`;
-
+  color: #97aabd;
+`
 
 class Navigation extends Component {
-  
   state = {
-    clicked: '/about/'
+    clicked: '/about/',
   }
 
   render() {
-    const routes =
-    [
+    const routes = [
       {
         to: '/converter/',
         message: 'Converter',
@@ -66,17 +63,19 @@ class Navigation extends Component {
       {
         to: '/',
         message: 'Main Page',
-      }
-    ];
+      },
+    ]
 
     return (
       <NavigationContainer>
         <List>
-          { 
-            routes.map((route, index) => {
-              return <NavItem key={index}><StyledLink to={route.to}>{route.message}</StyledLink></NavItem>
-            })
-          }
+          {routes.map((route, index) => {
+            return (
+              <NavItem key={index}>
+                <StyledLink to={route.to}>{route.message}</StyledLink>
+              </NavItem>
+            )
+          })}
         </List>
       </NavigationContainer>
     )

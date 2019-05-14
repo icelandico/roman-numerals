@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/roman-numerals",
+  pathPrefix: '/roman-numerals',
   siteMetadata: {
     title: 'Gatsby Default Starter',
   },
@@ -19,10 +19,9 @@ module.exports = {
         display: 'minimal-ui',
       },
     },
-    
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    // "gatsby-plugin-offline",
   ],
-  
 }

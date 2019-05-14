@@ -11,15 +11,11 @@ const StyledBody = styled.div`
   width: 100%;
   height: 100vh;
   background-color: #314455;
-  color: #97AABD;
+  color: #97aabd;
 `
 
-const Body = (props) => {
-  return (
-    <StyledBody>
-      {props.children}
-    </StyledBody>
-  )
+const Body = props => {
+  return <StyledBody>{props.children}</StyledBody>
 }
 
 export default Body

@@ -17,9 +17,6 @@ const IndexPage = () => (
     </HeaderWrapper>
     <Navigation />
   </Body>
-
 )
 
 export default IndexPage
-
-
