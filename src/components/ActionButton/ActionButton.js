@@ -22,9 +22,14 @@ const Button = styled.button`
 `
 
 class ActionButton extends Component {
-	render() {
-		return <Button>{this.props.buttonTitle}</Button>
-	}
+
+  render() {
+    return (
+      <Button onClick={this.props.clearInput || this.props.convert}>
+        {this.props.buttonTitle}
+      </Button>
+    )
+  }
 }
 
 export default ActionButton

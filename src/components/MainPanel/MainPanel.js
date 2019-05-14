@@ -12,7 +12,7 @@ const ButtonContainer = styled.div`
 const InputPanel = styled.div`
 	text-align: center;
 	min-height: 25%;
-	margin-top: 2rem;
+  margin-top: 2rem;
 `
 
 const StyledInput = styled.input`
@@ -109,11 +109,11 @@ class Input extends Component {
         <ButtonContainer>
           <ActionButton
             buttonTitle="Convert"
-            onClick={this.handleConvert}
+            convert={this.handleConvert}
           />
           <ActionButton
             buttonTitle="Clear"
-            onClick={this.clearInput}
+            clearInput={this.clearInput}
           />
         </ButtonContainer>
         <ResultDisplay result={this.state.result} />
