@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import ResultDisplay from './../ResultDisplay/ResultDisplay'
 import Toast from './../Toast/Toast'
+import globals from '../../../global-variables'
 
 const Button = styled.button`
-  background: #97AABD;
+  background: #97aabd;
   display: block;
   border: 2px solid transparent;
   border-radius: 15px;
@@ -18,8 +19,8 @@ const Button = styled.button`
 
   :hover {
     background: #314455;
-    color: #97AABD;
-    border: 2px solid #97AABD;
+    color: #97aabd;
+    border: 2px solid #97aabd;
   }
 `
 
@@ -27,15 +28,15 @@ const ButtonContainer = styled.div`
   display: flex;
 `
 
-const ButtonConvert = Button.withComponent('button');
+const ButtonConvert = Button.withComponent('button')
 
-const ButtonClear = Button.withComponent('button');
+const ButtonClear = Button.withComponent('button')
 
 const InputPanel = styled.div`
   text-align: center;
   min-height: 25%;
   margin-top: 2rem;
-`;
+`
 
 const StyledInput = styled.input`
   padding: 0.5rem;
@@ -47,25 +48,25 @@ const StyledInput = styled.input`
   &:focus {
     outline: none;
     box-shadow: 0.4rem 0.4rem 0.75rem #000;
-  } 
+  }
 `
 
 class Input extends Component {
   state = {
     input: '',
     result: '',
-    alert: ''
+    alert: '',
   }
 
   clearInput = () => {
     this.setState({
-      input: ''
+      input: '',
     })
   }
-  
-  handleChange = (event) => {
+
+  handleChange = event => {
     this.setState({
-      input: event.target.value
+      input: event.target.value,
     })
   }
 
@@ -74,49 +75,47 @@ class Input extends Component {
     this.validateInput(inputNumber)
   }
 
-  handleDisplayResult = (input) => {
+  handleDisplayResult = input => {
     this.setState({
-      result: this.convertNumber(input)
+      result: this.convertNumber(input),
     })
   }
 
-  convertNumber = (number) => {
-    const latinNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000]
-    const romanNums = ['I', 'II', 'III', 'IV', 'V','VI', 'VII', 'VIII', 'IX', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM', 'M', 'MM', 'MMM', 'MMMM']
-    const thousands = Math.floor(number / 1000) * 1000;
-    const hundreds = (Math.floor((number % 1000) / 100)) * 100;
-    const decimals = (Math.floor((number % 100) / 10)) * 10;
-    const nums = number % 10;
-    const destructurizedNumber = [thousands, hundreds, decimals, nums];
-    const romanNumsArray = destructurizedNumber.map(number => romanNums[latinNums.indexOf(number)])
+  convertNumber = number => {
+    const { latinNums, romanNums } = globals
+    const thousands = Math.floor(number / 1000) * 1000
+    const hundreds = Math.floor((number % 1000) / 100) * 100
+    const decimals = Math.floor((number % 100) / 10) * 10
+    const nums = number % 10
+    const destructurizedNumber = [thousands, hundreds, decimals, nums]
+    const romanNumsArray = destructurizedNumber.map(
+      number => romanNums[latinNums.indexOf(number)]
+    )
     return romanNumsArray.join('')
   }
 
-  validateInput = (input) => {
-    const emptyInputText = 'Type at least one digit';
-    const higherNumberText = 'Max number is 4999';
-    const zeroText = 'Romans didn\'t have zero!';
+  validateInput = input => {
+    const emptyInputText = 'Type at least one digit'
+    const higherNumberText = 'Max number is 4999'
+    const zeroText = "Romans didn't have zero!"
     if (input === 0) {
       return this.handleError(zeroText)
-    }
-    else if (input > 4999) {
+    } else if (input > 4999) {
       return this.handleError(higherNumberText)
-    }
-    else if (!input) {
+    } else if (!input) {
       return this.handleError(emptyInputText)
-    }
-    else {
+    } else {
       return this.handleDisplayResult(input)
     }
   }
 
-  handleError = (errorText) => {
+  handleError = errorText => {
     this.setState({
       input: '',
-      alert: errorText
+      alert: errorText,
     })
     this.clearTimeout()
-    this.toastTimer = setTimeout(() => this.setState( { alert: '' } ), 5000)
+    this.toastTimer = setTimeout(() => this.setState({ alert: '' }), 5000)
   }
 
   clearTimeout = () => {
@@ -124,7 +123,7 @@ class Input extends Component {
   }
 
   render() {
-    return(
+    return (
       <InputPanel>
         <StyledInput
           placeholder="Type a number"
@@ -133,38 +132,14 @@ class Input extends Component {
           type="text"
         />
         <ButtonContainer>
-          <ButtonConvert
-            onClick={this.handleConvert}
-          >
-            Convert
-        </ButtonConvert>
-        <ButtonClear
-          onClick={this.clearInput}
-        >
-            Clear
-        </ButtonClear>
+          <ButtonConvert onClick={this.handleConvert}>Convert</ButtonConvert>
+          <ButtonClear onClick={this.clearInput}>Clear</ButtonClear>
         </ButtonContainer>
-        <ResultDisplay 
-          result={this.state.result}
-        />
-        {
-
-        this.state.alert ?
-
-        <Toast
-          alertText={this.state.alert}
-        />
-
-        :
-
-        null 
-
-        }
+        <ResultDisplay result={this.state.result} />
+        {this.state.alert ? <Toast alertText={this.state.alert} /> : null}
       </InputPanel>
     )
   }
 }
 
 export default Input
-
-
