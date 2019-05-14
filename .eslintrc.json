@@ -22,6 +22,7 @@
 		"linebreak-style": ["error", "windows"],
 		"quotes": ["error", "double"],
 		"semi": ["error", "never"],
-		"prettier/prettier": "error"
+		"prettier/prettier": "error",
+		"react/jsx-closing-bracket-location": [1, "after-props"]
 	}
 }
